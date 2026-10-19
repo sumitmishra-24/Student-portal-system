@@ -26,10 +26,3 @@ document
     event.preventDefault();
     window.location.href = "signup.html";
   });
-
-document
-  .getElementById("forgot-password")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    alert("Password recovery will be added soon!");
-  });

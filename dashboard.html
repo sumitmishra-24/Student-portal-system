@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">SP</div>
+        <h2>Student Portal</h2>
+      </div>
+
+      <nav class="navigation">
+        <a href="#" class="nav-link active">Dashboard</a>
+        <a href="#" class="nav-link">My Courses</a>
+        <a href="#" class="nav-link">Attendance</a>
+        <a href="#" class="nav-link">Results</a>
+        <a href="#" class="nav-link">My Profile</a>
+      </nav>
+
+      <a href="index.html" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome to your student portal.</p>
+        </div>
+
+        <div class="student-info">
+          <div class="avatar">S</div>
+          <span>Student</span>
+        </div>
+      </header>
+
+      <section class="welcome-card">
+        <h2>Welcome back, Student! 👋</h2>
+        <p>Here's an overview of your academic progress.</p>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <p>Enrolled Courses</p>
+          <h2>04</h2>
+          <span>Courses this semester</span>
+        </div>
+
+        <div class="stat-card">
+          <p>Attendance</p>
+          <h2>85%</h2>
+          <span>Overall attendance</span>
+        </div>
+
+        <div class="stat-card">
+          <p>Average Grade</p>
+          <h2>A</h2>
+          <span>Current performance</span>
+        </div>
+      </section>
+
+      <section class="courses-section">
+        <div class="section-heading">
+          <h2>My Courses</h2>
+          <a href="#">View all</a>
+        </div>
+
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-icon">💻</div>
+            <h3>Web Development</h3>
+            <p>HTML, CSS and JavaScript</p>
+            <div class="progress-bar">
+              <div class="progress-fill progress-one"></div>
+            </div>
+            <span>75% completed</span>
+          </div>
+
+          <div class="course-card">
+            <div class="course-icon">🗄️</div>
+            <h3>Database Management</h3>
+            <p>SQL and database concepts</p>
+            <div class="progress-bar">
+              <div class="progress-fill progress-two"></div>
+            </div>
+            <span>60% completed</span>
+          </div>
+
+          <div class="course-card">
+            <div class="course-icon">🐍</div>
+            <h3>Python Programming</h3>
+            <p>Programming fundamentals</p>
+            <div class="progress-bar">
+              <div class="progress-fill progress-three"></div>
+            </div>
+            <span>45% completed</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="dashboard-footer">© 2026 Student Portal</footer>
+    </main>
+  </body>
+</html>
