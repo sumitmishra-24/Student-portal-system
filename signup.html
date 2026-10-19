@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Registration | Student Portal</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="login-container">
+      <div class="login-header">
+        <div class="logo">SP</div>
+
+        <h1>Create Account</h1>
+
+        <p>Register to access your Student Portal.</p>
+      </div>
+
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+
+          <input
+            type="text"
+            id="full-name"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="student-id">Student ID</label>
+
+          <input
+            type="text"
+            id="student-id"
+            placeholder="Enter your student ID"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="signup-email">Email Address</label>
+
+          <input
+            type="email"
+            id="signup-email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+
+          <input
+            type="password"
+            id="signup-password"
+            placeholder="Create a password"
+            minlength="8"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Re-enter your password"
+            minlength="8"
+            required
+          />
+        </div>
+
+        <button type="submit" class="login-btn">Create Account</button>
+
+        <p id="signup-message"></p>
+      </form>
+
+      <div class="signup-link">
+        Already have an account?
+        <a href="index.html">Login</a>
+      </div>
+
+      <p class="footer-text">© 2026 Student Portal. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
