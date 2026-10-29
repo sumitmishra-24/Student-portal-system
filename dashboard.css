@@ -314,3 +314,6 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.progress-four {
+  width: 30%;
+}
