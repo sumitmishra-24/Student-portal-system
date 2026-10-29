@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile | Student Portal</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">SP</div>
+        <h2>Student Portal</h2>
+      </div>
+
+      <nav class="navigation">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="courses.html" class="nav-link">My Courses</a>
+        <a href="attendance.html" class="nav-link">Attendance</a>
+        <a href="results.html" class="nav-link">Results</a>
+        <a href="profile.html" class="nav-link active">My Profile</a>
+      </nav>
+
+      <a href="index.html" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h1>My Profile</h1>
+          <p>View your personal and academic information.</p>
+        </div>
+
+        <div class="student-info">
+          <div class="avatar">S</div>
+          <span>Student</span>
+        </div>
+      </header>
+
+      <section class="profile-card">
+        <div class="profile-avatar">
+          <img src="student-photo.jpg" alt="Student Profile Photo" />
+        </div>
+        <h2>Student Name</h2>
+        <p class="profile-role"><b>Sumit Mishra</b></p>
+        <span class="profile-badge">Active Student</span>
+      </section>
+
+      <section class="profile-details">
+        <div class="section-heading">
+          <h2>Personal Information</h2>
+        </div>
+
+        <div class="profile-grid">
+          <div class="profile-field">
+            <span>Full Name</span>
+            <strong>Student Name</strong>
+          </div>
+
+          <div class="profile-field">
+            <span>Student ID</span>
+            <strong>STU2026001</strong>
+          </div>
+
+          <div class="profile-field">
+            <span>Email Address</span>
+            <strong>student@example.com</strong>
+          </div>
+
+          <div class="profile-field">
+            <span>Course</span>
+            <strong>B.Tech Computer Science</strong>
+          </div>
+
+          <div class="profile-field">
+            <span>Academic Year</span>
+            <strong>2026</strong>
+          </div>
+
+          <div class="profile-field">
+            <span>Account Status</span>
+            <strong class="profile-active">Active</strong>
+          </div>
+        </div>
+      </section>
+
+      <footer class="dashboard-footer">
+        © 2026 Student Portal. All rights reserved.
+      </footer>
+    </main>
+  </body>
+</html>

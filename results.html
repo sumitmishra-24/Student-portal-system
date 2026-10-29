@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Results | Student Portal</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">SP</div>
+        <h2>Student Portal</h2>
+      </div>
+
+      <nav class="navigation">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="courses.html" class="nav-link">My Courses</a>
+        <a href="attendance.html" class="nav-link">Attendance</a>
+        <a href="results.html" class="nav-link active">Results</a>
+        <a href="profile.html" class="nav-link">My Profile</a>
+      </nav>
+
+      <a href="index.html" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h1>Academic Results</h1>
+          <p>View your marks and academic performance.</p>
+        </div>
+
+        <div class="student-info">
+          <div class="avatar">S</div>
+          <span>Student</span>
+        </div>
+      </header>
+
+      <section class="welcome-card">
+        <h2>Your Academic Performance 🎓</h2>
+        <p>Review your subject-wise marks and track your progress.</p>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <p>Overall Percentage</p>
+          <h2>82%</h2>
+          <span>Current semester</span>
+        </div>
+
+        <div class="stat-card">
+          <p>Subjects Passed</p>
+          <h2>4 / 4</h2>
+          <span>All subjects cleared</span>
+        </div>
+
+        <div class="stat-card">
+          <p>Overall Grade</p>
+          <h2>A</h2>
+          <span>Academic performance</span>
+        </div>
+      </section>
+
+      <section class="courses-section">
+        <div class="section-heading">
+          <h2>Subject-wise Results</h2>
+          <span>Semester 1</span>
+        </div>
+
+        <div class="attendance-table-wrapper">
+          <table class="attendance-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Maximum Marks</th>
+                <th>Marks Obtained</th>
+                <th>Percentage</th>
+                <th>Grade</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Web Development</td>
+                <td>100</td>
+                <td>88</td>
+                <td>88%</td>
+                <td>A</td>
+                <td><span class="status status-good">Pass</span></td>
+              </tr>
+
+              <tr>
+                <td>Database Management</td>
+                <td>100</td>
+                <td>82</td>
+                <td>82%</td>
+                <td>A</td>
+                <td><span class="status status-good">Pass</span></td>
+              </tr>
+
+              <tr>
+                <td>Python Programming</td>
+                <td>100</td>
+                <td>79</td>
+                <td>79%</td>
+                <td>B+</td>
+                <td><span class="status status-good">Pass</span></td>
+              </tr>
+
+              <tr>
+                <td>Operating Systems</td>
+                <td>100</td>
+                <td>79</td>
+                <td>79%</td>
+                <td>B+</td>
+                <td><span class="status status-good">Pass</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="dashboard-footer">
+        © 2026 Student Portal. All rights reserved.
+      </footer>
+    </main>
+  </body>
+</html>

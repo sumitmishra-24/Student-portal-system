@@ -370,3 +370,95 @@ body {
     font-size: 12px;
   }
 }
+
+.profile-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #dbeafe;
+  margin: 0 auto 15px;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-card h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.profile-role {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.profile-badge {
+  display: inline-block;
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-details {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+
+.profile-field span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.profile-field strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-field .profile-active {
+  color: #15803d;
+}
+
+@media (max-width: 600px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .profile-details {
+    padding: 20px;
+  }
+}
