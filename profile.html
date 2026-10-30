@@ -6,7 +6,7 @@
     <title>My Profile | Student Portal</title>
     <link rel="stylesheet" href="dashboard.css" />
   </head>
-  <body>
+  <body class="auth-protected">
     <aside class="sidebar">
       <div class="brand">
         <div class="logo">SP</div>
@@ -41,7 +41,7 @@
         <div class="profile-avatar">
           <img src="student-photo.jpg" alt="Student Profile Photo" />
         </div>
-        <h2>Student Name</h2>
+        <h2 id="profile-header-name">Student Name</h2>
         <p class="profile-role"><b>Sumit Mishra</b></p>
         <span class="profile-badge">Active Student</span>
       </section>
@@ -54,17 +54,17 @@
         <div class="profile-grid">
           <div class="profile-field">
             <span>Full Name</span>
-            <strong>Student Name</strong>
+            <strong id="profile-full-name">Student Name</strong>
           </div>
 
           <div class="profile-field">
             <span>Student ID</span>
-            <strong>STU2026001</strong>
+            <strong id="profile-student-id">STU2026001</strong>
           </div>
 
           <div class="profile-field">
             <span>Email Address</span>
-            <strong>student@example.com</strong>
+            <strong id="profile-email">student@example.com</strong>
           </div>
 
           <div class="profile-field">
@@ -88,5 +88,12 @@
         © 2026 Student Portal. All rights reserved.
       </footer>
     </main>
+
+    <!-- Official Supabase JavaScript Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Supabase Project Configuration -->
+    <script src="supabase-config.js"></script>
+    <!-- Protected Page Auth Guard -->
+    <script src="auth-guard.js"></script>
   </body>
 </html>

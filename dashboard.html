@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="dashboard.css" />
   </head>
-  <body>
+  <body class="auth-protected">
     <aside class="sidebar">
       <div class="brand">
         <div class="logo">SP</div>
@@ -105,5 +105,12 @@
 
       <footer class="dashboard-footer">© 2026 Student Portal</footer>
     </main>
+
+    <!-- Official Supabase JavaScript Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Supabase Project Configuration -->
+    <script src="supabase-config.js"></script>
+    <!-- Protected Page Auth Guard -->
+    <script src="auth-guard.js"></script>
   </body>
 </html>

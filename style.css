@@ -141,10 +141,16 @@ a:hover {
   color: #94a3b8;
 }
 
-#message {
+#message,
+#signup-message,
+#reset-message,
+#update-message {
   text-align: center;
   margin-top: 15px;
   font-size: 13px;
+  line-height: 1.5;
+  min-height: 18px;
+  word-break: break-word;
 }
 
 /* Mobile screen adjustments */
