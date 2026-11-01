@@ -1,102 +1,224 @@
-# Student Portal System - Supabase Authentication
+# Student Portal System
 
-This project is a Student Portal System built with HTML, CSS, and vanilla JavaScript, integrated with Supabase Authentication.
+A web-based Student Portal System built with **HTML, CSS, JavaScript, and Supabase Authentication**. It provides students with a simple interface to access their dashboard, courses, attendance, academic results, and profile.
 
----
+## Overview
 
-## 📁 Project Structure
+The Student Portal System is designed to provide a centralized interface where students can securely sign in and view their academic information.
+
+The project currently includes a responsive frontend and Supabase-powered authentication with email verification and password recovery.
+
+## Features
+
+### Authentication
+- Student registration with full name, student ID, email, and password.
+- Secure email and password login using Supabase.
+- Email verification after registration.
+- Forgot password and password reset functionality.
+- Persistent login sessions.
+- Logout functionality.
+
+### Student Dashboard
+- Personalized student welcome message.
+- Overview of enrolled courses.
+- Academic progress summary.
+
+### Student Portal Pages
+- **Dashboard:** Overview of student activities.
+- **My Courses:** View enrolled courses and progress.
+- **Attendance:** View subject-wise attendance.
+- **Results:** View academic performance and marks.
+- **My Profile:** View student information.
+
+### Security
+- Protected pages accessible only to authenticated users.
+- Automatic redirection to the login page when no valid session exists.
+- Supabase-managed authentication sessions.
+- Frontend uses the Supabase Publishable Key, never the Secret Key.
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Page structure |
+| CSS3 | Styling and responsive layout |
+| JavaScript | Frontend functionality |
+| Supabase Auth | User authentication |
+| Git & GitHub | Version control |
+
+## Project Structure
 
 ```text
 Student_portal_System/
-├── index.html            # Login page (public)
-├── signup.html           # Student registration page (public)
-├── forgot-password.html  # Password recovery request page (public)
-├── reset-password.html   # New password setup page (public)
-├── dashboard.html        # Main student dashboard (protected)
-├── courses.html          # Enrolled courses page (protected)
-├── Attendance.html       # Attendance tracking page (protected)
-├── results.html          # Academic results page (protected)
-├── profile.html          # Student profile page (protected)
 │
-├── supabase-config.js    # Supabase credentials & client initialization
-├── auth.js               # Login, signup, and password reset logic
-├── auth-guard.js         # Protected route guard, session check & logout
-├── script.js             # General portal script
+├── index.html
+├── signup.html
+├── forgot-password.html
+├── reset-password.html
 │
-├── style.css             # Styles for login, signup, forgot-password, reset-password
-└── dashboard.css         # Styles for dashboard, sidebar, courses, results, profile
+├── dashboard.html
+├── courses.html
+├── attendance.html
+├── results.html
+├── profile.html
+│
+├── supabase-config.js
+├── auth.js
+├── auth-guard.js
+├── script.js
+│
+├── style.css
+├── dashboard.css
+├── university-bg.jpeg
+├── student-photo.jpg
+│
+├── .gitignore
+└── README.md
 ```
 
----
+## Getting Started
 
-## ⚙️ How to Configure Supabase Authentication
+### 1. Clone the Repository
 
-1. **Create / Open Supabase Project**:
-   - Go to [Supabase](https://supabase.com) and create or open your project.
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
 
-2. **Obtain API Credentials**:
-   - Go to **Project Settings** (gear icon) -> **API**.
-   - Copy the **Project URL** (e.g. `https://your-project.supabase.co`).
-   - Copy the **anon / public** key under *Project API keys*.
-   - ⚠️ **NEVER** use or expose the `service_role` key in frontend code.
+### 2. Open the Project
 
-3. **Add Credentials to `supabase-config.js`**:
-   Open `supabase-config.js` and update:
-   ```javascript
-   const SUPABASE_URL = "https://your-project-id.supabase.co";
-   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
-   ```
+```bash
+cd Student_portal_System
+```
 
-4. **Configure Email Auth Settings in Supabase**:
-   - In Supabase Dashboard, go to **Authentication** -> **Providers** -> **Email**.
-   - Ensure **Enable Email provider** is turned **ON**.
-   - (Optional) Toggle **Confirm email**:
-     - If **ON**, students must click the email confirmation link before their first login.
-     - If **OFF**, students are logged in immediately upon registration.
+Open the folder in VS Code or Antigravity.
 
----
+### 3. Configure Supabase
 
-## 🔗 Redirect URLs to Add in Supabase
+Create a free project at [Supabase](https://supabase.com/).
 
-In your Supabase Dashboard:
-1. Navigate to **Authentication** -> **URL Configuration**.
-2. Under **Site URL**, set your primary URL (e.g., `http://localhost:5500` or `http://127.0.0.1:5500` or your deployed URL).
-3. Under **Redirect URLs**, click **Add URL** and add:
-   - `http://localhost:5500/reset-password.html` (or your local port, e.g. `http://127.0.0.1:5500/reset-password.html`)
-   - `http://localhost:5500/dashboard.html`
-   - `http://localhost:5500/**` (wildcard for local development)
+In your Supabase project, navigate to **Project Settings → API Keys**.
 
----
+Obtain:
 
-## 🧪 Testing Features
+- Project URL
+- Publishable Key (`sb_publishable_...`)
 
-### 1. Test Student Signup
-- Open `signup.html` in your browser (preferably via a local server such as Live Server: `http://localhost:5500/signup.html`).
-- Enter Full Name, Student ID, Email, and Password (min 8 characters).
-- Click **Create Account**.
-- If Email Confirmation is enabled in Supabase, check your inbox and verify your email.
+Open `supabase-config.js` and configure:
 
-### 2. Test Student Login
-- Open `index.html`.
-- Enter your registered email and password.
-- Click **Login**.
-- You will be redirected to `dashboard.html`.
+```javascript
+const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+```
 
-### 3. Test Protected Pages & Session Persistence
-- Open any protected page directly (`dashboard.html`, `courses.html`, `Attendance.html`, `results.html`, `profile.html`).
-- While logged in, you can browse freely, and your student name/avatar will be displayed.
-- Refresh the browser: the session remains active (persistent login via Supabase session storage).
-- Open an incognito / private browser window and try navigating directly to `dashboard.html`: you will be redirected to `index.html`.
+**Security note:** Never put your Supabase Secret Key or legacy `service_role` key in frontend code or commit them to GitHub.
 
-### 4. Test Logout
-- On any protected page, click **Logout** in the left sidebar.
-- Your session will be terminated and you will be redirected to `index.html`.
-- Pressing the browser back button will redirect you back to `index.html`.
+### 4. Configure Email Authentication
 
-### 5. Test Forgot Password & Reset Password
-- Open `forgot-password.html`.
-- Enter your registered email and submit.
-- Open the reset email received from Supabase and click the recovery link.
-- You will be redirected to `reset-password.html`.
-- Enter your new password and click **Update Password**.
-- Once updated, log in with your new password on `index.html`.
+In the Supabase Dashboard:
+
+1. Open Authentication → Sign In / Providers.
+2. Select Email.
+3. Enable the Email provider.
+4. Keep Confirm Email enabled to require email verification.
+5. Set the minimum password length to 8 characters.
+
+### 5. Configure Redirect URLs
+
+Navigate to **Authentication → URL Configuration**.
+
+For local development, configure:
+
+**Site URL**
+
+```text
+http://127.0.0.1:5500
+```
+
+**Redirect URLs**
+
+```text
+http://127.0.0.1:5500/**
+```
+
+For deployment, add your actual production website URL and required redirect paths.
+
+### 6. Run the Project
+
+Use the VS Code Live Server extension.
+
+1. Open `index.html`.
+2. Right-click and select **Open with Live Server**.
+3. Open the local URL in your browser.
+
+Example:
+
+```text
+http://127.0.0.1:5500/index.html
+```
+
+Do not open the HTML files directly using the `file://` protocol. Authentication redirects require an HTTP or HTTPS origin.
+
+## Testing the Application
+
+### Student Registration
+1. Open `signup.html`.
+2. Enter your full name, student ID, email, and password.
+3. Click Create Account.
+4. Verify your email using the link sent by Supabase.
+
+### Student Login
+1. Open `index.html`.
+2. Enter your registered email and password.
+3. Click Login.
+4. You should be redirected to the dashboard.
+
+### Protected Pages
+Try accessing these pages without an authenticated session:
+
+- `dashboard.html`
+- `courses.html`
+- `attendance.html`
+- `results.html`
+- `profile.html`
+
+Unauthenticated visitors should be redirected to the login page.
+
+### Logout
+Click Logout from the sidebar. Your Supabase session should be cleared and you should return to the login page.
+
+### Password Recovery
+1. Open `forgot-password.html`.
+2. Enter your registered email.
+3. Open the password recovery email.
+4. Follow the recovery link.
+5. Set a new password on `reset-password.html`.
+6. Log in using your new password.
+
+## Current Project Limitations
+
+- Course, attendance, and result information currently uses static demonstration data.
+- Student authentication is connected to Supabase.
+- Academic records are not yet stored in Supabase database tables.
+- Student profile information currently uses authentication metadata and some static frontend content.
+
+## Future Improvements
+
+- Store student records in Supabase PostgreSQL.
+- Implement database tables for courses, attendance, and results.
+- Add Row Level Security (RLS) policies.
+- Add student profile editing.
+- Add profile image uploads using Supabase Storage.
+- Build an admin dashboard for managing student records.
+
+## Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Submit a pull request.
+
+## License
+
+This project is available for educational and learning purposes.
